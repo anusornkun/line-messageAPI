@@ -3,15 +3,22 @@
 
 function sent_line_pushjson($message, $tokenkey)
 {
-$ch = curl_init();
-curl_setopt( $ch, CURLOPT_URL, "https://api.line.me/v2/bot/message/push");
-curl_setopt( $ch, CURLOPT_POSTFIELDS, "message=$message");
-$headers = array( "Content-type: application/json", "Authorization: Bearer $tokenkey", );
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
-$result = curl_exec( $ch );
-curl_close( $ch );
-return $result;
+    curl -X POST \
+    https://api.line.me/v2/bot/message/push \
+    -H 'Authorization: Bearer 02dKuXg/pAqJaw5qw1iTgQ+KW35A469PaU6ICHUVdASbiKHIFFB1kLnz64FtpVKFMowKGr9KH3ydzI94KvbYlhdm+P+Bt6gSTuqWUNPGu0g2LSHKuc09VcF8oiFDrz24J5klyQoSGsOR/fbidRa1UgdB04t89/1O/w1cDnyilFU=' \
+    -H 'Content-Type: application/json' \
+    -d '{
+      "messages": [
+          {
+              "type": "text",
+              "text": "Hello, world1"
+          },
+          {
+              "type": "text",
+              "text": "Hello, world2"
+          }
+      ]
+  }'
 }
 $tokenkey = $_POST['tokenkey'];
 // $secretkey = $_POST['secretkey'];
