@@ -1,10 +1,5 @@
 <?php
-$tokenkey = $_POST['tokenkey'];
-// $secretkey = $_POST['secretkey'];
-// $userId = $_POST['userId'];
-$mesg = $_POST['mesg'];
 
-$message =  $mesg;
 
 function sent_line_pushjson($message, $tokenkey)
 {
@@ -22,6 +17,11 @@ $result = curl_exec( $ch );
 curl_close( $ch );
 return $result;
 }
+$tokenkey = $_POST['tokenkey'];
+// $secretkey = $_POST['secretkey'];
+// $userId = $_POST['userId'];
+$mesg = $_POST['mesg'];
 
+$message =  $mesg;
 echo sent_line_pushjson($message, $tokenkey);
 ?>
