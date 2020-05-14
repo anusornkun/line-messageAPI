@@ -1,38 +1,23 @@
 <?php
+function sent_line_push($message, $token)
 
-/* @var $this yii\web\View */
-use yii\helpers\Html;
 
-$this->title = 'Line Notify';
+require "vendor/autoload.php";
+
+$mesg = $_POST['mesg'];
+
+$access_token = '02dKuXg/pAqJaw5qw1iTgQ+KW35A469PaU6ICHUVdASbiKHIFFB1kLnz64FtpVKFMowKGr9KH3ydzI94KvbYlhdm+P+Bt6gSTuqWUNPGu0g2LSHKuc09VcF8oiFDrz24J5klyQoSGsOR/fbidRa1UgdB04t89/1O/w1cDnyilFU=';
+
+$channelSecret = 'a5b0bf20a231cb52c7d23bf2034b7a23';
+
+$pushID = 'U25cc1c3fc1dd7462abb26f845ab76d7d';
+
+$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
+
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($mesg);
+$response = $bot->pushMessage($pushID, $textMessageBuilder);
+
+echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+
 ?>
-
-<?=Html::a('ลงทะเบียน', $result, ['class' => 'btn btn-success'])?>
-
-<!-- <?php
- 
-$strAccessToken = "ACCESS_TOKEN";
- 
-$strUrl = "https://api.line.me/v2/bot/message/push";
- 
-$arrHeader = array();
-$arrHeader[] = "Content-Type: application/json";
-$arrHeader[] = "Authorization: Bearer {$strAccessToken}";
- 
-$arrPostData = array();
-$arrPostData['to'] = "USER_ID";
-$arrPostData['messages'][0]['type'] = "text";
-$arrPostData['messages'][0]['text'] = "นี้คือการทดสอบ Push Message";
- 
- 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL,$strUrl);
-curl_setopt($ch, CURLOPT_HEADER, false);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $arrHeader);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arrPostData));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-$result = curl_exec($ch);
-curl_close ($ch);
- 
-?> -->
