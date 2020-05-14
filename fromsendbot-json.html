@@ -1,0 +1,71 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <title>line push</title>
+</head>
+
+<body>
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-12 mx-auto">
+                        <div class="card border-secondary">
+                            <div class="card-header">
+                                <h3 class="mb-0 my-2">Message Push Json</h3>
+                            </div>
+                            <div class="card-body">
+
+                                <form action="sentbotpush-json.php" method="post" class="form" role="form"
+                                    autocomplete="off">
+                                    <div class="form-group">
+                                        <textarea name="tokenkey" rows="2" class="form-control" id="testTokenSecret"placeholder="Channel access token"></textarea><br>
+
+                                        <!-- <textarea name="secretkey" rows="1" class="form-control" id="testTokenSecret"placeholder="Channel Secret"></textarea><br>
+
+                                        <textarea name="userId" rows="1" class="form-control" id="testTokenSecret"placeholder="UserID"></textarea><br> -->
+
+                                        <label>Message</label>
+                                        <textarea name="mesg" rows="7" class="form-control" id="FormcontrolText" placeholder="Message">
+                                        </textarea>
+
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-success btn-xs btn-block">Sentline</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/row-->
+            </div>
+            <!--/col-->
+        </div>
+        <!--/row-->
+        <div class="col-md-2">
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
