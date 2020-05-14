@@ -19,5 +19,3 @@ $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($mesg)
 $response = $bot->pushMessage($pushID, $textMessageBuilder);
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
-
-?>
