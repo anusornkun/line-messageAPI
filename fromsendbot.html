@@ -13,10 +13,6 @@
 
 <body>
     <br />
-    <br />
-    <br />
-    <br />
-    <br />
     <div class="container">
         <div class="row">
             <div class="col-md-2">
@@ -29,13 +25,21 @@
                                 <h3 class="mb-0 my-2">Message Official Account</h3>
                             </div>
                             <div class="card-body">
-                                <form action="sentbotpush.php" method="post" class="form"
-                                    role="form" autocomplete="off">
+
+                                <form action="sentbotpush.php" method="post" class="form" role="form"
+                                    autocomplete="off">
                                     <div class="form-group">
-                                        <label for="exampleFormControlTextarea1">Message</label>
-                                        <textarea name="mesg" rows="7" class="form-control"
-                                            id="exampleFormControlTextarea1" placeholder="Message">
+                                        <textarea name="tokenkey" rows="2" class="form-control" id="testTokenSecret"placeholder="Channel access token"></textarea><br>
+
+                                        <textarea name="secretkey" rows="1" class="form-control" id="testTokenSecret"placeholder="Channel Secret"></textarea><br>
+
+                                        <textarea name="userId" rows="1" class="form-control" id="testTokenSecret"placeholder="UserID"></textarea><br>
+
+                                        <label>Message</label>
+                                        <textarea name="mesg" rows="4" class="form-control" id="FormcontrolText" placeholder="Message">
                                         </textarea>
+
+                                        
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-success btn-xs btn-block">Sentline</button>

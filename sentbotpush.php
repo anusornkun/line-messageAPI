@@ -1,16 +1,19 @@
 <?php
-
+$tokenkey = $_POST['tokenkey'];
+$secretkey = $_POST['secretkey'];
+$userId = $_POST['userId'];
 $mesg = $_POST['mesg'];
+
 $message =  $mesg;
 
 require "vendor/autoload.php";
 
 
-$access_token = '02dKuXg/pAqJaw5qw1iTgQ+KW35A469PaU6ICHUVdASbiKHIFFB1kLnz64FtpVKFMowKGr9KH3ydzI94KvbYlhdm+P+Bt6gSTuqWUNPGu0g2LSHKuc09VcF8oiFDrz24J5klyQoSGsOR/fbidRa1UgdB04t89/1O/w1cDnyilFU=';
+$access_token = $tokenkey;
 
-$channelSecret = 'a5b0bf20a231cb52c7d23bf2034b7a23';
+$channelSecret = $secretkey;
 
-$pushID = 'U25cc1c3fc1dd7462abb26f845ab76d7d';
+$pushID = $userId;
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
