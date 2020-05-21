@@ -17,6 +17,7 @@ return $result;
 }
 $mesg = $_POST['mesg'];
 $message =  $mesg;
-$token = 'ovaHOeqVfq6QEUtYIvy7XsHEoF3TA85yU2p6mDtXIAl';
+$tokenkey = $_POST['tokenkey'];
+$token = $tokenkey;
 echo sent_line_notify($message, $token);
 ?>
