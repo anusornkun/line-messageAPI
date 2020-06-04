@@ -10,7 +10,7 @@ curl_setopt( $ch, CURLOPT_URL, "https://notify-api.line.me/api/notify");
 curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt( $ch, CURLOPT_POST, 1);
-curl_setopt( $ch, CURLOPT_POSTFIELDS, "message=$valueheader : $message");
+curl_setopt( $ch, CURLOPT_POSTFIELDS, "message=$message");
 curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
 
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
